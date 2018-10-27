@@ -1,0 +1,115 @@
+<div>
+  <h1 align="center">ADD ITEM</h1>
+</div>
+<br>
+<!-- <div class="form-group" align="center">
+<mat-form-field style="
+width: 900px;
+">
+  <input matInput name="subcat_id"
+  [(ngModel)]="subcat_id" #subcategoryid placeholder="Enter SubCategory id" required>
+  <mat-error>SubCategory id is required.</mat-error>
+</mat-form-field>
+</div> -->
+<div class="form-group" align="center">
+<mat-form-field style="
+width: 900px;
+">
+  <input matInput
+  name="item_name"
+  [(ngModel)]="item_name"
+  #itemname
+  placeholder="Enter Item Name">
+</mat-form-field>
+<br>
+</div>
+
+<div class="form-group" align="center">
+  <mat-form-field style="
+  width: 900px;
+  ">
+    <input matInput name="fk_category_id"
+    [(ngModel)]="fk_category_id" #fkcatid placeholder="Enter Category id" required>
+    <mat-error>Category id is required.</mat-error>
+  </mat-form-field>
+  </div>
+
+  <div class="form-group" align="center">
+    <mat-form-field style="
+    width: 900px;
+    ">
+      <input matInput
+      name="price"
+      [(ngModel)]="price"
+      placeholder="Enter Item Price">
+    </mat-form-field>
+    <br>
+    </div>
+
+    <div class="form-group" align="center">
+      <mat-form-field style="
+      width: 900px;
+      ">
+        <input matInput
+        name="qty"
+        [(ngModel)]="qty"
+        placeholder="Enter Item Qty">
+      </mat-form-field>
+      <br>
+      </div>
+
+      <div class="form-group" align="center">
+        <mat-form-field style="
+        width: 900px;
+        ">
+          <input matInput
+          name="description"
+          [(ngModel)]="description"
+          placeholder="Enter Item Description">
+        </mat-form-field>
+        <br>
+        </div>
+
+        <div class="form-group" align="center">
+          <mat-form-field style="
+          width: 900px;
+          ">
+            <input matInput
+            name="item_img"
+            [(ngModel)]="item_img"
+            placeholder="Enter Item Image">
+          </mat-form-field>
+          <br>
+          </div>
+
+        <div class="form-group" align="center">
+          <mat-form-field style="
+          width: 900px;
+          ">
+            <input matInput
+            name="size"
+            [(ngModel)]="size"
+            placeholder="Enter Item Size">
+          </mat-form-field>
+          <br>
+          </div>
+
+          <div class="form-group" align="center">
+            <mat-form-field style="
+            width: 900px;
+            ">
+              <input matInput
+              name="colours"
+              [(ngModel)]="colours"
+              placeholder="Enter Item Colors">
+            </mat-form-field>
+            <br>
+            </div>
+  <br>
+<br>
+<div class="button-row">
+    <button mat-raised-button color="primary" (click)="onAdd()">ADD</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button mat-raised-button color="primary" (click)="onCancel()">CANCEL</button>
+</div>
+
+

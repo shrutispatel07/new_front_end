@@ -1,0 +1,73 @@
+<h1 align="center">MANAGE ITEMS</h1>
+<br>
+<div style="margin-left: 1000px ">
+  <button mat-button (click)="onAdd()"><mat-icon >add</mat-icon><b>Add</b></button>
+</div>
+<mat-form-field style="margin-left:50px">
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+<br>
+<div class="mat-elevation-z8">
+<table mat-table [dataSource]="dataSource" matSort >
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="Action1">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Check</th>
+    <td mat-cell *matCellDef="let element">
+      <mat-checkbox (change)="checked(itemcat)"></mat-checkbox>
+
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="item_name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Item Name</th>
+    <td mat-cell *matCellDef="let element"> {{element.item_name}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Price</th>
+    <td mat-cell *matCellDef="let element"> {{element.price}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="qty">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Qty</th>
+    <td mat-cell *matCellDef="let element"> {{element.qty}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Description</th>
+    <td mat-cell *matCellDef="let element"> {{element.description}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="item_img">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Image</th>
+    <td mat-cell *matCellDef="let element"> {{element.item_img}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="size">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Size</th>
+    <td mat-cell *matCellDef="let element"> {{element.size}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="colours">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Colors</th>
+    <td mat-cell *matCellDef="let element"> {{element.colours}}</td>
+  </ng-container>
+  <ng-container matColumnDef="Action">
+    <th mat-header-cell *matHeaderCellDef>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Actions </th>
+    <td mat-cell *matCellDef="let element">
+    <button mat-button (click)="onUpdate(element)"><mat-icon >edit</mat-icon></button>
+    <button mat-button (click)="onDel(element)"><mat-icon>delete</mat-icon></button></td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedcolumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedcolumns;"></tr>
+</table>
+
+
+<mat-paginator [pageSizeOptions]="[5,10,15,30,35]"></mat-paginator>
+</div>

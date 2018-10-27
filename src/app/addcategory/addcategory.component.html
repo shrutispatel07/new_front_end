@@ -1,0 +1,31 @@
+<div>
+  <h1 align="center">ADD CATEGORY</h1>
+</div>
+<br>
+<div class="form-group" align="center">
+<mat-form-field style="
+width: 900px;
+">
+  <input matInput name="category_id"
+  [(ngModel)]="category_id" #categoryid placeholder="Enter Category id" required>
+  <mat-error>Category id is required.</mat-error>
+</mat-form-field>
+</div>
+<div class="form-group" align="center">
+<mat-form-field style="
+width: 900px;
+">
+  <input matInput
+  name="category_name"
+  [(ngModel)]="category_name"
+  #categoryname
+  placeholder="Enter category name">
+</mat-form-field>
+<br>
+<br>
+</div>
+<div class="button-row">
+    <button mat-raised-button color="primary" (click)="onAdd()">ADD</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button mat-raised-button color="primary" (click)="onCancel()">CANCEL</button>
+</div>
+

@@ -1,0 +1,38 @@
+<div>
+  <h1 align="center">UPDATE SUBCATEGORY</h1>
+</div>
+<br>
+<br>
+<div class="form-group" align="center">
+<mat-form-field style="
+width: 900px;
+">
+ <b>SubCategory Id:</b><br><br><input disabled matInput type="text" name="subcat_id" id="subcat_id" [(ngModel)]="subcat_id"  >
+</mat-form-field>
+</div>
+<div class="form-group" align="center">
+<mat-form-field style="
+width: 900px;
+">
+ <b> SubCategory Name:</b><br><br> <input matInput type="text"
+  name="subcat_name"
+  [(ngModel)]="subcat_name"
+
+ >
+</mat-form-field>
+</div>
+<div class="form-group" align="center">
+  <mat-form-field style="
+  width: 900px;
+  ">
+   <b>Category Id:</b><br><br><input disabled matInput type="text" name="fk_cat_id" id="fk_cat_id" [(ngModel)]="fk_cat_id"  >
+  </mat-form-field>
+  </div>
+  <br>
+  <br>
+<div class="button-row">
+    <button mat-raised-button color="primary" (click)="onUpdate()">UPDATE</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button mat-raised-button color="primary" (click)="onCancel()">CANCEL</button>
+</div>
+
+

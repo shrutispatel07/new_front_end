@@ -1,0 +1,39 @@
+<div>
+  <h1 align="center">LOG IN</h1>
+</div>
+<br>
+<div class="form-group" align="center">
+<mat-form-field style="
+width: 900px;
+">
+  <input matInput name="email_id" #emailid placeholder="Enter Email id" required [(ngModel)]="email_id">
+  <mat-error>E-mail id is required.</mat-error>
+</mat-form-field>
+</div>
+<div class="form-group" align="center">
+<mat-form-field style="
+width: 900px;
+">
+  <input matInput
+  [type]="flag?'password':'text'"
+  name="pass"
+  id="pass"
+  [(ngModel)]="pass"
+  #password
+  maxlength="10"
+  placeholder="Enter Password">
+  <mat-icon (click)="flag=!flag" matSuffix>{{flag?'visibility':'visibility_off'}}</mat-icon>
+  <mat-hint>Length must be within 10</mat-hint>
+  <mat-hint align="end">{{password.value.length}} /10</mat-hint>
+</mat-form-field>
+</div>
+<div class="button-row">
+    <button mat-raised-button color="primary" (click)="onLogin()">LOG IN</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button mat-raised-button color="primary">CANCEL</button>
+</div>
+<br>
+<br>
+<div align="center">
+  <a (click)="onnew()" >New User?</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a (click)="onForget()">Forget Password?</a>
+</div>

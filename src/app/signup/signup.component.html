@@ -1,0 +1,117 @@
+<div>
+  <h1 align="center">SIGN UP</h1>
+</div>
+<br>
+<div class="form-group" align="center">
+<mat-form-field style="
+width: 900px;
+">
+  <input matInput name="email_id"
+  [(ngModel)]="email_id" #emailid placeholder="Enter Email id" required>
+  <mat-error>Email-id is required.</mat-error>
+</mat-form-field>
+</div>
+
+<div class="form-group" align="center">
+  <mat-form-field style="
+  width: 900px;
+  ">
+    <input matInput
+    [type]="flag?'password':'text'"
+    name="pass"
+    id="pass"
+    [(ngModel)]="pass"
+    #password
+    maxlength="10"
+    placeholder="Enter Password">
+    <mat-icon (click)="flag=!flag" matSuffix>{{flag?'visibility':'visibility_off'}}</mat-icon>
+    <mat-hint>Length must be within 10</mat-hint>
+    <mat-hint align="end">{{password.value.length}} /10</mat-hint>
+  </mat-form-field>
+  </div>
+
+  <div class="form-group" align="center">
+      <mat-form-field style="
+      width: 900px;
+      ">
+        <input matInput name="name1"
+        [(ngModel)]="name1" #name placeholder="Enter Your Name">
+      </mat-form-field>
+      </div>
+
+<div class="form-group" align="center">
+  <mat-form-field style="
+  width: 900px;
+  ">
+    <textarea matInput
+    name="Address"
+    [(ngModel)]="Address"
+    #address
+    placeholder="Enter Your Address"></textarea>
+  </mat-form-field>
+  <br>
+  <br>
+  </div>
+
+  <div class="form-group" align="center">
+    <b>Gender:</b>&nbsp;&nbsp;
+    <mat-radio-group
+    name="gender"
+    [(ngModel)]="gender">
+      <mat-radio-button value="Male">Male</mat-radio-button>
+      <mat-radio-button value="Female">Female</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <div class="form-group" align="center">
+    <mat-form-field style="
+    width: 900px;
+    ">
+      <input matInput
+      name="mobile_no"
+      id="mobile_no"
+      [(ngModel)]="mobile_no"
+      #mobileno
+      maxlength="10"
+      placeholder="Enter Your Mobile Number">
+      <mat-hint>Length must be 10</mat-hint>
+    </mat-form-field>
+    </div>
+
+    <div class="form-group" align="center">
+        <mat-form-field style="
+        width: 900px;
+        ">
+          <input matInput name="state"
+          [(ngModel)]="state" #emailid placeholder="Enter Your State">
+        </mat-form-field>
+        </div>
+
+      <div class="form-group" align="center">
+          <mat-form-field>
+              <mat-select [(value)]="selected" placeholder="Country" name="country" [(ngModel)]="country">
+                <mat-option>None</mat-option>
+                <mat-option value="India">India</mat-option>
+                <mat-option value="Other">Other</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <p>You selected: {{selected}}</p>
+      </div>
+
+      <div class="form-group" align="center">
+          <mat-form-field>
+              <mat-select [(value)]="selected1" placeholder="Type" name="type" [(ngModel)]="type">
+                <mat-option>None</mat-option>
+                <mat-option value="User">User</mat-option>
+                <mat-option value="Admin">Admin</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <p>You selected: {{selected1}}</p>
+      </div>
+
+<div class="button-row">
+    <button mat-raised-button color="primary" (click)="onSign()">SIGN UP</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button mat-raised-button color="primary" (click)="onCancel()">CANCEL</button>
+</div>

@@ -1,0 +1,129 @@
+<div>
+  <h1 align="center">ADD VISITING CARD REQUIREMENT</h1>
+</div>
+<br>
+<!-- <div class="form-group" align="center">
+<mat-form-field style="
+width: 900px;
+">
+  <input matInput name="subcat_id"
+  [(ngModel)]="subcat_id" #subcategoryid placeholder="Enter SubCategory id" required>
+  <mat-error>SubCategory id is required.</mat-error>
+</mat-form-field>
+</div> -->
+<div class="form-group" align="center">
+<mat-form-field style="
+width: 900px;
+">
+  <input matInput required
+  name="cname"
+  [(ngModel)]="cname"
+  placeholder="Enter Company Name">
+</mat-form-field>
+<br>
+</div>
+
+<div class="form-group" align="center">
+  <mat-form-field style="
+  width: 900px;">
+    <input matInput name="ownername"
+    [(ngModel)]="ownername"  placeholder="Enter Owner's Name">
+  </mat-form-field>
+  </div>
+
+    <div class="form-group" align="center">
+      <mat-form-field style="
+      width: 900px;
+      ">
+        <input matInput
+        name="tagline"
+        [(ngModel)]="tagline"
+        placeholder="Enter Tag Line">
+      </mat-form-field>
+      </div>
+
+      <div class="form-group" align="center">
+        <mat-form-field style="
+        width: 900px;
+        ">
+          <input matInput
+          name="phone"
+          [(ngModel)]="phone"
+          placeholder="Enter Phone Number">
+        </mat-form-field>
+        <br>
+        </div>
+
+        <div class="form-group" align="center">
+          <mat-form-field style="
+          width: 900px;
+          ">
+            <textarea matInput
+            name="Address"
+            [(ngModel)]="Address"
+            placeholder="Enter Your Address"></textarea>
+          </mat-form-field>
+          <br>
+          <br>
+          </div>
+
+        <div class="form-group" align="center">
+          <mat-form-field style="
+          width: 900px;
+          ">
+            <input matInput
+            name="email"
+            [(ngModel)]="email"
+            placeholder="Enter Your Company Email">
+          </mat-form-field>
+          <br>
+          </div>
+
+
+        <div class="form-group" align="center">
+          <mat-form-field style="
+          width: 900px;
+          ">
+            <input matInput
+            name="web"
+            [(ngModel)]="web"
+            placeholder="Enter Your Company Website Name">
+          </mat-form-field>
+          <br>
+          </div>
+
+
+        <div class="form-group" align="center">
+          <mat-form-field style="
+          width: 900px;
+          ">
+            <input matInput
+            name="requirements"
+            [(ngModel)]="requirements"
+            placeholder="Enter Your Extra Requirements">
+          </mat-form-field>
+          <br>
+          </div>
+
+
+        <div class="form-group" align="center">
+          <mat-form-field style="
+          width: 900px;
+          ">
+            <input matInput
+            name="fk_email_id"
+            [(ngModel)]="fk_email_id"
+            placeholder="Enter Your Account Email-id">
+          </mat-form-field>
+          <br>
+          </div>
+  <br>
+<br>
+<div class="button-row">
+    <button mat-raised-button color="primary" (click)="onAdd()">ADD</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button mat-raised-button color="primary" (click)="onCancel()">CANCEL</button>
+</div>
+
+
+
+

@@ -1,0 +1,97 @@
+<div>
+  <h1 align="center">ADD ORDER</h1>
+</div>
+<br>
+<!-- <div class="form-group" align="center">
+<mat-form-field style="
+width: 900px;
+">
+  <input matInput name="subcat_id"
+  [(ngModel)]="subcat_id" #subcategoryid placeholder="Enter SubCategory id" required>
+  <mat-error>SubCategory id is required.</mat-error>
+</mat-form-field>
+</div> -->
+<div class="form-group" align="center">
+<mat-form-field style="
+width: 900px;
+">
+  <input matInput
+  name="qty"
+  [(ngModel)]="qty"
+  placeholder="Enter Qty">
+</mat-form-field>
+<br>
+</div>
+
+<div class="form-group" align="center">
+  <mat-form-field style="
+  width: 900px;">
+    <input matInput name="price"
+    [(ngModel)]="price"  placeholder="Enter Price">
+  </mat-form-field>
+  </div>
+
+
+  <div class="form-group" align="center">
+    <mat-form-field style="
+    width: 900px;">
+        <mat-select [(value)]="selected" placeholder="Choose Status" name="status" [(ngModel)]="status">
+          <mat-option>None</mat-option>
+          <mat-option value="Done">Done</mat-option>
+          <mat-option value="Pending">Pending</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <p>You selected: {{selected}}</p>
+</div>
+
+    <div class="form-group" align="center">
+      <!-- <mat-form-field style="
+      width: 900px;
+      ">
+        <input matInput
+        name="date"
+        [(ngModel)]="date"
+        placeholder="Enter Date">
+      </mat-form-field> -->
+      <mat-form-field style="
+      width: 900px;">
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date" name="date" [(ngModel)]="date" >
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <br>
+      </div>
+
+      <div class="form-group" align="center">
+        <mat-form-field style="
+        width: 900px;
+        ">
+          <input matInput
+          name="fk_email_id"
+          [(ngModel)]="fk_email_id"
+          placeholder="Enter Email-id">
+        </mat-form-field>
+        <br>
+        </div>
+
+        <div class="form-group" align="center">
+          <mat-form-field style="
+          width: 900px;
+          ">
+            <input matInput
+            name="fk_item_id"
+            [(ngModel)]="fk_item_id"
+            placeholder="Enter Item Id">
+          </mat-form-field>
+          <br>
+          </div>
+  <br>
+<br>
+<div class="button-row">
+    <button mat-raised-button color="primary" (click)="onAdd()">ADD</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button mat-raised-button color="primary" (click)="onCancel()">CANCEL</button>
+</div>
+
+
+

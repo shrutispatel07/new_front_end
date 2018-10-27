@@ -1,0 +1,28 @@
+<div>
+    <h1 align="center">UPDATE CATEGORY</h1>
+  </div>
+  <br>
+  <br>
+  <div class="form-group" align="center">
+  <mat-form-field style="
+  width: 900px;
+  ">
+   <b>Category Id:</b><br><br><input disabled matInput type="text" name="category_id" id="category_id" [(ngModel)]="category_id"  >
+  </mat-form-field>
+  </div>
+  <div class="form-group" align="center">
+  <mat-form-field style="
+  width: 900px;
+  ">
+   <b> Category Name:</b><br><br> <input matInput type="text"
+    name="category_name"
+    [(ngModel)]="category_name"
+
+   >
+  </mat-form-field>
+  </div>
+  <div class="button-row">
+      <button mat-raised-button color="primary" (click)="onUpdate()">UPDATE</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button mat-raised-button color="primary" (click)="onCancel()">CANCEL</button>
+  </div>
+
