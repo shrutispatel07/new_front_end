@@ -6,7 +6,7 @@ import { envelop } from '../app/manageenvelops/envelop';
 })
 export class EnvelopsService {
   envelop:string="http://localhost:3000/envelop/";
-  envelopbycname:string="http://localhost:3000/envelopbycname/";
+  envelopbyid:string="http://localhost:3000/envelopbyid/";
   joinenvelop:string="http://localhost:3000/joinenvelop/";
   constructor(private _http:HttpClient) { }
 
@@ -27,21 +27,21 @@ export class EnvelopsService {
   {
     let body=JSON.stringify(item);
     let head=new HttpHeaders().set('Content-Type','application/json');
-    return this._http.put(this.envelop+item.cname,body,{headers:head});
+    return this._http.put(this.envelop+item.id,body,{headers:head});
   }
 
   delEnvelop(item)
   {
     let head=new HttpHeaders().set('Content-Type','application/json');
-    return this._http.delete(this.envelop+item.cname,{headers:head});
+    return this._http.delete(this.envelop+item.id,{headers:head});
   }
 
   getEnvelopByUserId(id:string)
   {
     return this._http.get(this.joinenvelop+id);
   }
-  getEnvelopByCname(cname:string)
+  getEnvelopById(id:number)
   {
-    return this._http.get(this.envelopbycname+cname);
+    return this._http.get(this.envelopbyid+id);
   }
 }

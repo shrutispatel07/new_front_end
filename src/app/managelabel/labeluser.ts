@@ -1,6 +1,7 @@
 export class labeluser
 {
   constructor(
+    public id:number,
     public cname:string,
     public ownername:string,
     public Address:string,

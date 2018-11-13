@@ -9,6 +9,7 @@ import { envelop } from '../manageenvelops/envelop';
   styleUrls: ['./updateenvelop.component.css']
 })
 export class UpdateenvelopComponent implements OnInit {
+  id:number;
   cname:string;
   Address:string;
   phone:string;
@@ -18,7 +19,7 @@ export class UpdateenvelopComponent implements OnInit {
   constructor(private _envelop:EnvelopsService,private _router:Router,private _actroute:ActivatedRoute) { }
   onUpdate()
   {
-    this._envelop.updateEnvelop(new envelop(this.cname,this.Address,this.phone,this.requirements,this.fk_email_id)).subscribe(
+    this._envelop.updateEnvelop(new envelop(this.id,this.cname,this.Address,this.phone,this.requirements,this.fk_email_id)).subscribe(
       (data:any)=>
       {
         console.log(data);
@@ -28,14 +29,16 @@ export class UpdateenvelopComponent implements OnInit {
   }
   onCancel()
   {
-      this._router.navigate(['manageenvelop']);
+      this._router.navigate(['/manageenvelop']);
   }
   ngOnInit() {
-    this.cname=this._actroute.snapshot.params['cname'];
-    this._envelop.getEnvelopByCname(this.cname).subscribe(
+    this.id=this._actroute.snapshot.params['id'];
+    this._envelop.getEnvelopById(this.id).subscribe(
       (data:envelop[])=>
       {
         console.log(data);
+        this.id=data[0].id;
+        console.log(this.id);
         this.cname=data[0].cname;
         console.log(this.cname);
         this.Address=data[0].Address;

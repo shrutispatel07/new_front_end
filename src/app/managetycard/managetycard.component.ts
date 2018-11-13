@@ -1,20 +1,19 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import {SelectionModel} from '@angular/cdk/collections';
 import { MatTableDataSource,MatPaginator,MatSort } from '@angular/material';
-import { envelop } from './envelop';
-import { envelopuser } from './envelopuser';
-import { EnvelopsService } from '../../services/envelops.service';
+import { tycard } from './tycard';
+import {tycarduser } from './tycarduser';
+import { TycardService } from '../../services/tycard.service';
 import { Router } from '@angular/router';
 @Component({
-  selector: 'app-manageenvelops',
-  templateUrl: './manageenvelops.component.html',
-  styleUrls: ['./manageenvelops.component.css']
+  selector: 'app-managetycard',
+  templateUrl: './managetycard.component.html',
+  styleUrls: ['./managetycard.component.css']
 })
-export class ManageenvelopsComponent implements OnInit {
+export class ManagetycardComponent implements OnInit {
   id:number;
   cname:string;
-  Address:string;
-  phone:string;
+  yourtext:string;
   requirements:string;
   fk_email_id:string;
   email_id:string;
@@ -26,36 +25,37 @@ export class ManageenvelopsComponent implements OnInit {
   gender:string;
   country:string;
   type:string;
-  envelop:envelop[]=[];
-  envelopuser:envelopuser[]=[];
-  delarr:envelopuser[]=[];
-  displayedcolumns:string[]=['Action1','cname','Address','phone','requirements','fk_email_id','Action'];
+  tycard:tycard[]=[];
+  tycarduser:tycarduser[]=[];
+  delarr:tycarduser[]=[];
+  displayedcolumns:string[]=['Action1','cname','yourtext','requirements','fk_email_id','Action'];
   dataSource=new MatTableDataSource();
-  selection = new SelectionModel<envelopuser>(true, []);
-  constructor(private _envelop:EnvelopsService,private _router:Router) { }
+  selection = new SelectionModel<tycarduser>(true, []);
+  constructor(private _tycard:TycardService,private _router:Router) { }
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
+
   onAdd()
   {
-      this._router.navigate(['/addenvelop']);
+      this._router.navigate(['/addtycard']);
   }
-  onUpdate(item:envelopuser)
+  onUpdate(item:tycarduser)
   {
-      this._router.navigate(['/updateenvelop',item.id]);
+      this._router.navigate(['/updatetycard',item.id]);
       console.log(this.cname);
   }
   onDel(item)
   {
-    this._envelop.delEnvelop(item).subscribe(
+    this._tycard.delTycard(item).subscribe(
       (data:any)=>
       {
-        this.envelopuser.splice(this.envelopuser.indexOf(item),1);
+        this.tycarduser.splice(this.tycarduser.indexOf(item),1);
         alert('Successfully Deleted!!');
-        this.dataSource.data=this.envelopuser;
+        this.dataSource.data=this.tycarduser;
       }
     );
   }
-  checked(item:envelopuser)
+  checked(item:tycarduser)
   {
       if(this.delarr.find(x=>x==item))
       {
@@ -68,7 +68,7 @@ export class ManageenvelopsComponent implements OnInit {
   ngOnInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
-    this.getAllEnvelop();
+    this.getAllTycard();
   }
 
   applyFilter(filterValue: string) {
@@ -78,13 +78,13 @@ export class ManageenvelopsComponent implements OnInit {
      this.dataSource.paginator.firstPage();
      }
    }
-   getAllEnvelop()
+   getAllTycard()
   {
-    this._envelop.getAllEnvelop().subscribe(
-      (data:envelopuser[])=>{
+    this._tycard.getAllTycard().subscribe(
+      (data:tycarduser[])=>{
 
-        this.envelopuser=data;
-        this.dataSource.data=this.envelopuser;
+        this.tycarduser=data;
+        this.dataSource.data=this.tycarduser;
       }
     );
   }

@@ -9,6 +9,8 @@ import { LoginComponent } from './login/login.component';
 import { MatPaginatorModule,MatNativeDateModule,MatDatepickerModule,MatCheckboxModule,MatSelectModule,MatSortModule,MatFormFieldModule,MatIcon,MatButtonModule,MatInputModule, MatIconModule, MatHint, MatTableModule, MatToolbarModule, MatSidenavModule, MatListModule} from '@angular/material';
 import {MatRadioModule} from '@angular/material/radio';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LayoutModule } from '@angular/cdk/layout';
+
 import { ManagecategoryComponent } from './managecategory/managecategory.component';
 import { AddcategoryComponent } from './addcategory/addcategory.component';
 import { UpdatecategoryComponent } from './updatecategory/updatecategory.component';
@@ -16,7 +18,6 @@ import { ManagesubcatComponent } from './managesubcat/managesubcat.component';
 import { AddsubcatComponent } from './addsubcat/addsubcat.component';
 import { UpdatesubcatComponent } from './updatesubcat/updatesubcat.component';
 import { MenuComponent } from './menu/menu.component';
-import { LayoutModule } from '@angular/cdk/layout';
 import { SignupComponent } from './signup/signup.component';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 import { ViewprofileComponent } from './viewprofile/viewprofile.component';
@@ -37,6 +38,12 @@ import { UpdateenvelopComponent } from './updateenvelop/updateenvelop.component'
 import { ManagelabelComponent } from './managelabel/managelabel.component';
 import { AddlabelComponent } from './addlabel/addlabel.component';
 import { UpdatelabelComponent } from './updatelabel/updatelabel.component';
+import { ManagetycardComponent } from './managetycard/managetycard.component';
+import { AddtycardComponent } from './addtycard/addtycard.component';
+import { UpdatetycardComponent } from './updatetycard/updatetycard.component';
+import { ManageflyerComponent } from './manageflyer/manageflyer.component';
+import { AddflyerComponent } from './addflyer/addflyer.component';
+import { UpdateflyerComponent } from './updateflyer/updateflyer.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +76,12 @@ import { UpdatelabelComponent } from './updatelabel/updatelabel.component';
     ManagelabelComponent,
     AddlabelComponent,
     UpdatelabelComponent,
+    ManagetycardComponent,
+    AddtycardComponent,
+    UpdatetycardComponent,
+    ManageflyerComponent,
+    AddflyerComponent,
+    UpdateflyerComponent,
 
   ],
   imports: [

@@ -9,6 +9,7 @@ import { label } from '../managelabel/label';
   styleUrls: ['./addlabel.component.css']
 })
 export class AddlabelComponent implements OnInit {
+  id:number;
   cname:string;
   ownername:string;
   Address:string;
@@ -18,7 +19,7 @@ export class AddlabelComponent implements OnInit {
   constructor(private _label:LabelService,private _router:Router) { }
   onAdd()
   {
-    this._label.addLabel(new label(this.cname,this.ownername,this.Address,this.phone,this.requirements,this.fk_email_id)).subscribe(
+    this._label.addLabel(new label(this.id,this.cname,this.ownername,this.Address,this.phone,this.requirements,this.fk_email_id)).subscribe(
       (data:label[])=>
       {
         console.log(data);

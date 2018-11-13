@@ -9,6 +9,7 @@ import { visitingcard } from '../managevisitingcard/visitingcard';
   styleUrls: ['./updatevisitingcard.component.css']
 })
 export class UpdatevisitingcardComponent implements OnInit {
+  id:number;
   cname:string;
   ownername:string;
   tagline:string;
@@ -22,7 +23,7 @@ export class UpdatevisitingcardComponent implements OnInit {
   constructor(private _card:VisitingcardService,private _router:Router,private _actroute:ActivatedRoute) { }
   onUpdate()
   {
-    this._card.updateCard(new visitingcard(this.cname,this.ownername,this.tagline,this.phone,this.Address,this.email,this.web,this.requirements,this.fk_email_id)).subscribe(
+    this._card.updateCard(new visitingcard(this.id,this.cname,this.ownername,this.tagline,this.phone,this.Address,this.email,this.web,this.requirements,this.fk_email_id)).subscribe(
       (data:any)=>
       {
         console.log(data);
@@ -35,11 +36,13 @@ export class UpdatevisitingcardComponent implements OnInit {
       this._router.navigate(['managevisitingcard']);
   }
   ngOnInit() {
-    this.cname=this._actroute.snapshot.params['cname'];
-    this._card.getCardByCname(this.cname).subscribe(
+    this.id=this._actroute.snapshot.params['id'];
+    this._card.getCardById(this.id).subscribe(
       (data:visitingcard[])=>
       {
         console.log(data);
+        this.id=data[0].id;
+        console.log(this.id);
         this.cname=data[0].cname;
         console.log(this.cname);
         this.ownername=data[0].ownername;

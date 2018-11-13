@@ -1,9 +1,9 @@
-export class envelopuser{
+export class tycarduser
+{
   constructor(
     public id:number,
     public cname:string,
-    public Address:string,
-    public phone:string,
+    public yourtext:string,
     public requirements:string,
     public fk_email_id:string,
     public email_id:string,

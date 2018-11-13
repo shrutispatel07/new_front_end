@@ -9,6 +9,7 @@ import { visitingcard } from '../managevisitingcard/visitingcard';
   styleUrls: ['./addvisitingcard.component.css']
 })
 export class AddvisitingcardComponent implements OnInit {
+  id:number;
   cname:string;
   ownername:string;
   tagline:string;
@@ -30,7 +31,7 @@ export class AddvisitingcardComponent implements OnInit {
   constructor(private _card:VisitingcardService,private _router:Router) { }
   onAdd()
   {
-    this._card.addCard(new visitingcard(this.cname,this.ownername,this.tagline,this.phone,this.Address,this.email,this.web,this.requirements,this.fk_email_id)).subscribe(
+    this._card.addCard(new visitingcard(this.id,this.cname,this.ownername,this.tagline,this.phone,this.Address,this.email,this.web,this.requirements,this.fk_email_id)).subscribe(
       (data:visitingcard[])=>
       {
         console.log(data);

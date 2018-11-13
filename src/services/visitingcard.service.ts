@@ -7,7 +7,7 @@ import { visitingcard } from '../app/managevisitingcard/visitingcard';
 })
 export class VisitingcardService {
   visitingcard:string="http://localhost:3000/visitingcard/";
-  cardbycname:string="http://localhost:3000/cardbycname/";
+  cardbyid:string="http://localhost:3000/cardbyid/";
   joincard:string="http://localhost:3000/joincard/";
   constructor(private _http:HttpClient) { }
 
@@ -28,21 +28,21 @@ export class VisitingcardService {
   {
     let body=JSON.stringify(item);
     let head=new HttpHeaders().set('Content-Type','application/json');
-    return this._http.put(this.visitingcard+item.cname,body,{headers:head});
+    return this._http.put(this.visitingcard+item.id,body,{headers:head});
   }
 
   delCard(item)
   {
     let head=new HttpHeaders().set('Content-Type','application/json');
-    return this._http.delete(this.visitingcard+item.cname,{headers:head});
+    return this._http.delete(this.visitingcard+item.id,{headers:head});
   }
 
   getCardByUserId(id:string)
   {
     return this._http.get(this.joincard+id);
   }
-  getCardByCname(cname:string)
+  getCardById(id:number)
   {
-    return this._http.get(this.cardbycname+cname);
+    return this._http.get(this.cardbyid+id);
   }
 }

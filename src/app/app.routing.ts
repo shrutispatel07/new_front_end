@@ -27,6 +27,12 @@ import { UpdateenvelopComponent } from './updateenvelop/updateenvelop.component'
 import { ManagelabelComponent } from './managelabel/managelabel.component';
 import { AddlabelComponent } from './addlabel/addlabel.component';
 import { UpdatelabelComponent } from './updatelabel/updatelabel.component';
+import { ManagetycardComponent } from './managetycard/managetycard.component';
+import { AddtycardComponent } from './addtycard/addtycard.component';
+import { UpdatetycardComponent } from './updatetycard/updatetycard.component';
+import { ManageflyerComponent } from './manageflyer/manageflyer.component';
+import { AddflyerComponent } from './addflyer/addflyer.component';
+import { UpdateflyerComponent } from './updateflyer/updateflyer.component';
 const arr:Routes=[
   {path:'login',component:LoginComponent},
   {path:'',component:ManageitemsComponent},
@@ -47,13 +53,19 @@ const arr:Routes=[
   {path:'updatecategory/:category_id',component:UpdatecategoryComponent},
   {path:'managevisitingcard',component:ManagevisitingcardComponent},
   {path:'addvisitingcard',component:AddvisitingcardComponent},
-  {path:'updatevisitingcard/:cname',component:UpdatevisitingcardComponent},
+  {path:'updatevisitingcard/:id',component:UpdatevisitingcardComponent},
   {path:'manageenvelop',component:ManageenvelopsComponent},
   {path:'addenvelop',component:AddenvelopComponent},
-  {path:'updateenvelop/:cname',component:UpdateenvelopComponent},
+  {path:'updateenvelop/:id',component:UpdateenvelopComponent},
   {path:'managelabel',component:ManagelabelComponent},
   {path:'addlabel',component:AddlabelComponent},
-  {path:'updatelabel/:cname',component:UpdatelabelComponent},
+  {path:'updatelabel/:id',component:UpdatelabelComponent},
+  {path:'managetycard',component:ManagetycardComponent},
+  {path:'addtycard',component:AddtycardComponent},
+  {path:'updatetycard/:id',component:UpdatetycardComponent},
+  {path:'manageflyer',component:ManageflyerComponent},
+  {path:'addflyer',component:AddflyerComponent},
+  {path:'updateflyer/:id',component:UpdateflyerComponent},
   {path:'managesubcategory',component:ManagesubcatComponent},
   {path:'addsubcategory',component:AddsubcatComponent},
   {path:'updatesubcategory/:subcat_id',component:UpdatesubcatComponent}

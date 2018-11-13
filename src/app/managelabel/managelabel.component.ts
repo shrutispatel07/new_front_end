@@ -11,6 +11,7 @@ import { labeluser } from './labeluser';
   styleUrls: ['./managelabel.component.css']
 })
 export class ManagelabelComponent implements OnInit {
+  id:number;
   cname:string;
   ownername:string;
   Address:string;
@@ -42,7 +43,7 @@ export class ManagelabelComponent implements OnInit {
   }
   onUpdate(item:labeluser)
   {
-      this._router.navigate(['/updatelabel',item.cname]);
+      this._router.navigate(['/updatelabel',item.id]);
       console.log(this.cname);
   }
   onDel(item)

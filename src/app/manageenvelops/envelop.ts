@@ -1,6 +1,7 @@
 export class envelop
 {
   constructor(
+    public id:number,
     public cname:string,
     public Address:string,
     public phone:string,

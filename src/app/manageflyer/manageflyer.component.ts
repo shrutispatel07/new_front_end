@@ -1,20 +1,23 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import {SelectionModel} from '@angular/cdk/collections';
 import { MatTableDataSource,MatPaginator,MatSort } from '@angular/material';
-import { envelop } from './envelop';
-import { envelopuser } from './envelopuser';
-import { EnvelopsService } from '../../services/envelops.service';
+import { flyer } from './flyer';
+import { flyeruser } from './flyeruser';
+import { FlyerService } from '../../services/flyer.service';
 import { Router } from '@angular/router';
+
 @Component({
-  selector: 'app-manageenvelops',
-  templateUrl: './manageenvelops.component.html',
-  styleUrls: ['./manageenvelops.component.css']
+  selector: 'app-manageflyer',
+  templateUrl: './manageflyer.component.html',
+  styleUrls: ['./manageflyer.component.css']
 })
-export class ManageenvelopsComponent implements OnInit {
+export class ManageflyerComponent implements OnInit {
   id:number;
   cname:string;
-  Address:string;
+  hline:string;
   phone:string;
+  Address:string;
+  offer:string;
   requirements:string;
   fk_email_id:string;
   email_id:string;
@@ -26,36 +29,37 @@ export class ManageenvelopsComponent implements OnInit {
   gender:string;
   country:string;
   type:string;
-  envelop:envelop[]=[];
-  envelopuser:envelopuser[]=[];
-  delarr:envelopuser[]=[];
-  displayedcolumns:string[]=['Action1','cname','Address','phone','requirements','fk_email_id','Action'];
+  flyer:flyer[]=[];
+  flyeruser:flyeruser[]=[];
+  delarr:flyeruser[]=[];
+  displayedcolumns:string[]=['Action1','cname','hline','phone','Address','offer','requirements','fk_email_id','Action'];
   dataSource=new MatTableDataSource();
-  selection = new SelectionModel<envelopuser>(true, []);
-  constructor(private _envelop:EnvelopsService,private _router:Router) { }
+  selection = new SelectionModel<flyeruser>(true, []);
+  constructor(private _flyer:FlyerService,private _router:Router) { }
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
+
   onAdd()
   {
-      this._router.navigate(['/addenvelop']);
+      this._router.navigate(['/addflyer']);
   }
-  onUpdate(item:envelopuser)
+  onUpdate(item:flyeruser)
   {
-      this._router.navigate(['/updateenvelop',item.id]);
-      console.log(this.cname);
+      this._router.navigate(['/updateflyer',item.id]);
+      console.log(this.id);
   }
   onDel(item)
   {
-    this._envelop.delEnvelop(item).subscribe(
+    this._flyer.delFlyer(item).subscribe(
       (data:any)=>
       {
-        this.envelopuser.splice(this.envelopuser.indexOf(item),1);
+        this.flyeruser.splice(this.flyeruser.indexOf(item),1);
         alert('Successfully Deleted!!');
-        this.dataSource.data=this.envelopuser;
+        this.dataSource.data=this.flyeruser;
       }
     );
   }
-  checked(item:envelopuser)
+  checked(item:flyeruser)
   {
       if(this.delarr.find(x=>x==item))
       {
@@ -65,10 +69,11 @@ export class ManageenvelopsComponent implements OnInit {
         this.delarr.push(item);
       }
   }
+
   ngOnInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
-    this.getAllEnvelop();
+    this.getAllFlyer();
   }
 
   applyFilter(filterValue: string) {
@@ -78,13 +83,13 @@ export class ManageenvelopsComponent implements OnInit {
      this.dataSource.paginator.firstPage();
      }
    }
-   getAllEnvelop()
+   getAllFlyer()
   {
-    this._envelop.getAllEnvelop().subscribe(
-      (data:envelopuser[])=>{
+    this._flyer.getAllFlyer().subscribe(
+      (data:flyeruser[])=>{
 
-        this.envelopuser=data;
-        this.dataSource.data=this.envelopuser;
+        this.flyeruser=data;
+        this.dataSource.data=this.flyeruser;
       }
     );
   }

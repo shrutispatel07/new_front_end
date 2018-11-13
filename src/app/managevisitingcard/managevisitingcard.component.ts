@@ -47,7 +47,7 @@ export class ManagevisitingcardComponent implements OnInit {
   }
   onUpdate(item:carduser)
   {
-      this._router.navigate(['/updatevisitingcard',item.cname]);
+      this._router.navigate(['/updatevisitingcard',item.id]);
       console.log(this.cname);
   }
   onDel(item)

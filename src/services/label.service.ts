@@ -6,7 +6,7 @@ import { label } from '../app/managelabel/label';
 })
 export class LabelService {
   label:string="http://localhost:3000/label/";
-  labelbycname:string="http://localhost:3000/labelbycname/";
+  labelbyid:string="http://localhost:3000/labelbyid/";
   joinlabel:string="http://localhost:3000/joinlabel/";
   constructor(private _http:HttpClient) { }
 
@@ -27,21 +27,21 @@ export class LabelService {
   {
     let body=JSON.stringify(item);
     let head=new HttpHeaders().set('Content-Type','application/json');
-    return this._http.put(this.label+item.cname,body,{headers:head});
+    return this._http.put(this.label+item.id,body,{headers:head});
   }
 
   delLabel(item)
   {
     let head=new HttpHeaders().set('Content-Type','application/json');
-    return this._http.delete(this.label+item.cname,{headers:head});
+    return this._http.delete(this.label+item.id,{headers:head});
   }
 
   getLabelByUserId(id:string)
   {
     return this._http.get(this.joinlabel+id);
   }
-  getLabelByCname(cname:string)
+  getLabelById(id:number)
   {
-    return this._http.get(this.labelbycname+cname);
+    return this._http.get(this.labelbyid+id);
   }
 }

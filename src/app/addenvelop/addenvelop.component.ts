@@ -9,6 +9,7 @@ import { envelop } from '../manageenvelops/envelop';
   styleUrls: ['./addenvelop.component.css']
 })
 export class AddenvelopComponent implements OnInit {
+  id:number;
   cname:string;
   Address:string;
   phone:string;
@@ -17,7 +18,7 @@ export class AddenvelopComponent implements OnInit {
   constructor(private _envelop:EnvelopsService,private _router:Router) { }
   onAdd()
   {
-    this._envelop.addEnvelop(new envelop(this.cname,this.Address,this.phone,this.requirements,this.fk_email_id)).subscribe(
+    this._envelop.addEnvelop(new envelop(this.id,this.cname,this.Address,this.phone,this.requirements,this.fk_email_id)).subscribe(
       (data:envelop[])=>
       {
         console.log(data);

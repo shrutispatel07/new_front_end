@@ -1,16 +1,17 @@
 <div>
-  <h1 align="center">UPDATE VISITING CARD REQUIREMENT</h1>
+  <h1 align="center">UPDATE FLYER REQUIREMENT</h1>
 </div>
 <br>
+
 <div class="form-group" align="center">
-<mat-form-field style="
-width: 900px;
-">
-  <input matInput name="id"
-  [(ngModel)]="id"  placeholder="Enter SubCategory id" required>
-  <mat-error>SubCategory id is required.</mat-error>
-</mat-form-field>
-</div>
+  <mat-form-field style="
+  width: 900px;
+  ">
+    <input matInput name="id"
+    [(ngModel)]="id" placeholder="Enter Id" disabled>
+    <mat-error>Id is required.</mat-error>
+  </mat-form-field>
+  </div>
 
 <div class="form-group" align="center">
 <mat-form-field style="
@@ -24,34 +25,43 @@ width: 900px;
 <br>
 </div>
 
+
 <div class="form-group" align="center">
-  <mat-form-field style="
-  width: 900px;">
-    <input matInput name="ownername"
-    [(ngModel)]="ownername"  placeholder="Enter Owner's Name">
-  </mat-form-field>
-  </div>
+    <mat-form-field style="
+    width: 900px;
+    ">
+      <textarea matInput
+      name="hline"
+      [(ngModel)]="hline"
+      placeholder="Enter Your Head Line"></textarea>
+    </mat-form-field>
+    <br>
+    <br>
+    </div>
 
     <div class="form-group" align="center">
       <mat-form-field style="
       width: 900px;
       ">
-        <input matInput
-        name="tagline"
-        [(ngModel)]="tagline"
-        placeholder="Enter Tag Line">
+        <textarea matInput
+        name="phone"
+        [(ngModel)]="phone"
+        placeholder="Enter Your Phone Number"></textarea>
       </mat-form-field>
+      <br>
+      <br>
       </div>
 
       <div class="form-group" align="center">
         <mat-form-field style="
         width: 900px;
         ">
-          <input matInput
-          name="phone"
-          [(ngModel)]="phone"
-          placeholder="Enter Phone Number">
+          <textarea matInput
+          name="Address"
+          [(ngModel)]="Address"
+          placeholder="Enter Your Address"></textarea>
         </mat-form-field>
+        <br>
         <br>
         </div>
 
@@ -60,39 +70,13 @@ width: 900px;
           width: 900px;
           ">
             <textarea matInput
-            name="Address"
-            [(ngModel)]="Address"
-            placeholder="Enter Your Address"></textarea>
+            name="offer"
+            [(ngModel)]="offer"
+            placeholder="Enter Your Offer"></textarea>
           </mat-form-field>
           <br>
           <br>
           </div>
-
-        <div class="form-group" align="center">
-          <mat-form-field style="
-          width: 900px;
-          ">
-            <input matInput
-            name="email"
-            [(ngModel)]="email"
-            placeholder="Enter Your Company Email">
-          </mat-form-field>
-          <br>
-          </div>
-
-
-        <div class="form-group" align="center">
-          <mat-form-field style="
-          width: 900px;
-          ">
-            <input matInput
-            name="web"
-            [(ngModel)]="web"
-            placeholder="Enter Your Company Website Name">
-          </mat-form-field>
-          <br>
-          </div>
-
 
         <div class="form-group" align="center">
           <mat-form-field style="
@@ -118,12 +102,16 @@ width: 900px;
           </mat-form-field>
           <br>
           </div>
+
+
   <br>
 <br>
 <div class="button-row">
     <button mat-raised-button color="primary" (click)="onUpdate()">UPDATE</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button mat-raised-button color="primary" (click)="onCancel()">CANCEL</button>
 </div>
+
+
 
 
 
